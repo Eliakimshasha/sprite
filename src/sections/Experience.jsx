@@ -18,7 +18,6 @@ useGSAP(() => {
       start: "top 50%",
       end: "bottom top", // more scroll distance
       scrub: 1.5,
-      markers:true
     },
   });
 
