@@ -72,7 +72,7 @@ function Hero() {
         />
         <div className="relative z-[3px] mt- text-white ">
           <h1
-            className="text-8xl tracking-tighter font-bold"
+            className="text-8xl text-center tracking-tighter font-bold"
             style={{ textShadow: "2px 2px 8px rgba(0,0,0,0.1)" }}
           >
             Refresh Your World with Sprite
