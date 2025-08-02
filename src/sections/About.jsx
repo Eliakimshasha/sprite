@@ -12,13 +12,48 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function About() {
   useGSAP(() => {
+    const firstText = SplitText.create(".msg-one", {
+      type: "words",
+    });
+
+    const secondText = SplitText.create(".msg-two", {
+      type: "words",
+    });
+    
+
+    gsap.to(firstText.words, {
+      color: "#16a34a",
+      stagger: 1,
+      ease: "power1.in",
+      scrollTrigger: {
+        trigger: ".maini",
+        start: "top 80%",
+        end: "bottom 150%",
+        scrub: 1.5,
+  
+      },
+    })
+
+    gsap.to(secondText.words, {
+      color: "#16a34a",
+      stagger: 1,
+      ease: "power1.in",
+      scrollTrigger: {
+        trigger: ".maini",
+        start: "top 40%",
+        end: "bottom 100%",
+        scrub: 1.5,
+  
+      },
+    })
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".content",
         start: "-40% top",
         end: "bottom 50%",
         scrub: true,
-        // markers: true,
+        
       },
     });
 

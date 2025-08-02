@@ -1,3 +1,4 @@
+
 "use client";
 import FlavourHeader from "@/components/FlavourHeader";
 import React from "react";
@@ -20,14 +21,33 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function Flavours() {
   useGSAP(() => {
+    // Set initial state - completely hidden
+    gsap.set(".paths1", {
+      clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
+    });
 
+    // Create the reveal animation
+    gsap.to(".paths1", {
+      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+      ease: "power2.out", // Changed from inOut for smoother feel
+      scrollTrigger: {
+        trigger: ".pathcontent1",
+        start: "top 70%", // Start when pathcontent1 top hits 70% from viewport top
+        end: "top 30%", // End when pathcontent1 top hits 30% from viewport top
+        scrub: 1.5, // Slower scrub for smoother animation
+       
+       
+      }
+    });
 
+    // Images animation timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".flavour-contents",
         start: "top 70%",
         end: "bottom 90%",
         scrub: true,
+       
       },
     });
 
@@ -98,7 +118,7 @@ function Flavours() {
         <Image
           src={water}
           alt="water"
-          className="absolute w-[200px] image9  z-49  left-1/2 -ml-5 -translate-x-1/2 "
+          className="absolute w-[200px] image9 z-49 left-1/2 -ml-5 -translate-x-1/2"
         />
       </div>
     </div>

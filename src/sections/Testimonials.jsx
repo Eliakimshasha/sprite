@@ -6,14 +6,17 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
 
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+
 function Testimonials() {
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
         start: "90% top",
-        end: "170% bottom",
-        scrub: true,
+        end: "195% bottom",
+        scrub: 1.5,
       },
     });
 
@@ -28,7 +31,7 @@ function Testimonials() {
         top: 50,
         y: -50,
         ease: "power2.out",
-        duration: 2,
+       
       })
       .to(".text3", {
         left: 50,
