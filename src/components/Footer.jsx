@@ -22,7 +22,7 @@ function Footer() {
           src="/assets/videos/vid14.mp4"
           className="absolute  top-0 left-0 w-full h-full object-cover"
         />
-        <div className="absolute bg-green-900/50 w-full h-full left-0 top-0"></div>
+        <div className="absolute bg-black/70 w-full h-full left-0 top-0"></div>
       </div>
     </div>
   );
